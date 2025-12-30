@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Daniel Gil — Industrial Project Manager & Consultant. Project execution and simulation-based analysis for decision making." />
+  <title>Daniel Gil — Industrial PM & Consultant</title>
+
+  <!-- Social preview -->
+  <meta property="og:title" content="Daniel Gil — Industrial PM & Consultant" />
+  <meta property="og:description" content="Industrial project management and simulation-based analysis for decision making." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gilgutierrez.me/" />
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f172a;
+      --muted:#475569;
+      --line:#e2e8f0;
+      --accent:#0f172a;
+      --shadow: 0 10px 25px rgba(2,6,23,.08);
+      --radius: 18px;
+    }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 10% 0%, #f1f5f9 0%, rgba(241,245,249,0) 60%),
+      radial-gradient(1000px 500px at 90% 10%, #eef2ff 0%, rgba(238,242,255,0) 55%),
+      var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    a{ color:inherit; text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{ max-width: 980px; margin: 0 auto; padding: 28px 18px 56px; }
+
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding: 10px 4px 22px;
+    }
+    .brand{ display:flex; align-items:center; gap:12px; }
+    .mark{
+      width:40px;height:40px; border:1px solid var(--line); border-radius:14px;
+      display:grid; place-items:center; background:#fff;
+      box-shadow: 0 6px 18px rgba(2,6,23,.06);
+      font-weight:700; letter-spacing:-0.02em;
+    }
+    nav{
+      display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end;
+      font-size:14px; color:var(--muted);
+      align-items:center;
+    }
+    nav a{ padding:8px 10px; border-radius:12px; }
+    nav a:hover{ background: rgba(15,23,42,.06); text-decoration:none; }
+
+    .lang{
+      display:inline-flex; gap:6px; align-items:center;
+      padding:6px; border:1px solid var(--line); border-radius:14px;
+      background: rgba(255,255,255,.9);
+      box-shadow: 0 6px 18px rgba(2,6,23,.06);
+    }
+    .lang button{
+      border:0; background:transparent; cursor:pointer;
+      font-weight:700; font-size:12px; color:var(--muted);
+      padding:6px 10px; border-radius:10px;
+    }
+    .lang button[aria-pressed="true"]{
+      background: rgba(15,23,42,.08);
+      color: var(--text);
+    }
+
+    .hero{
+      display:grid; grid-template-columns: 1.25fr .75fr; gap:18px;
+      align-items:stretch; margin-top: 10px;
+    }
+    @media (max-width: 860px){
+      .hero{ grid-template-columns:1fr; }
+      nav{ justify-content:flex-start; }
+    }
+
+    /* ✅ FIX 1: avoid clipping of tag pills at certain widths/zoom */
+    .card{
+      background: rgba(255,255,255,.9);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: visible; /* was hidden */
+    }
+    .card .pad{ padding: 22px; }
+
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      font-size:13px; color:var(--muted);
+      background: rgba(15,23,42,.04);
+      border:1px solid rgba(15,23,42,.08);
+      padding:6px 10px; border-radius:999px;
+    }
+    h1{
+      margin: 12px 0 8px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.15;
+      letter-spacing:-0.02em;
+    }
+    .subtitle{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 62ch;
+    }
+
+    .cta{ display:flex; gap:10px; flex-wrap:wrap; margin-top: 16px; }
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 11px 14px; border-radius: 14px;
+      border:1px solid var(--line); background:#fff;
+      font-weight:600; font-size:14px;
+      box-shadow: 0 6px 18px rgba(2,6,23,.06);
+    }
+    .btn.primary{
+      background: var(--accent); color:#fff; border-color: var(--accent);
+      box-shadow: 0 10px 25px rgba(2,6,23,.18);
+    }
+    .btn:hover{ text-decoration:none; transform: translateY(-1px); }
+    .btn:active{ transform: translateY(0px); }
+
+    .list{
+      display:grid; gap:10px; margin: 0; padding: 0;
+      list-style:none; color: var(--muted); font-size:14px;
+    }
+    .list li{ display:flex; gap:10px; align-items:flex-start; }
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background: rgba(15,23,42,.22);
+      margin-top:7px; flex: 0 0 auto;
+    }
+
+    section{ margin-top: 18px; }
+    h2{ margin: 0 0 10px; font-size: 18px; letter-spacing:-0.01em; }
+    .grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 860px){ .grid{ grid-template-columns: 1fr; } }
+
+    /* ✅ FIX 2: ensure pills wrap cleanly and never overlap/cut */
+    .tagrow{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top: 12px;
+      align-items: flex-start;
+      padding-bottom: 2px; /* tiny buffer to avoid bottom clipping */
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      font-size:12px;
+      line-height: 1.35;
+      color:var(--muted);
+      background: rgba(15,23,42,.04);
+      border:1px solid rgba(15,23,42,.08);
+      padding:6px 10px;
+      border-radius:999px;
+      white-space: nowrap;
+    }
+
+    .foot{
+      margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--line);
+      color: var(--muted); font-size: 13px;
+      display:flex; flex-wrap:wrap; gap:10px;
+      justify-content:space-between; align-items:center;
+    }
+
+    html{ scroll-behavior:smooth; }
+
+    /* language blocks */
+    [data-lang]{ display:none; }
+    html[lang="en"] [data-lang="en"]{ display:block; }
+    html[lang="es"] [data-lang="es"]{ display:block; }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="mark">DG</div>
+      <div>
+        <div style="font-weight:700;letter-spacing:-0.01em;">Daniel Gil</div>
+        <div style="font-size:13px;color:var(--muted);" data-lang="en">Industrial Project Manager &amp; Consultant</div>
+        <div style="font-size:13px;color:var(--muted);" data-lang="es">Project Manager Industrial &amp; Consultor</div>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#about" data-lang="en">About</a>
+      <a href="#about" data-lang="es">Sobre mí</a>
+
+      <a href="#services" data-lang="en">What I do</a>
+      <a href="#services" data-lang="es">Qué hago</a>
+
+      <a href="#contact" data-lang="en">Contact</a>
+      <a href="#contact" data-lang="es">Contacto</a>
+
+      <span class="lang" aria-label="Language switch">
+        <button id="btnEN" type="button" aria-pressed="true">EN</button>
+        <button id="btnES" type="button" aria-pressed="false">ES</button>
+      </span>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="card">
+      <div class="pad">
+        <span class="kicker" data-lang="en">Simulation-based analysis · Delivery focus</span>
+        <span class="kicker" data-lang="es">Análisis con simulación · Enfoque en ejecución</span>
+
+        <h1 data-lang="en">Industrial projects, executed with clarity.</h1>
+        <h1 data-lang="es">Proyectos industriales, ejecutados con claridad.</h1>
+
+        <p class="subtitle" data-lang="en">
+          I help industrial teams move from design to commissioning with structured planning,
+          supplier coordination, and simulation-based analysis to reduce risk and improve decisions.
+        </p>
+        <p class="subtitle" data-lang="es">
+          Ayudo a equipos industriales a pasar del diseño a la puesta en marcha con planificación estructurada,
+          coordinación con proveedores y análisis mediante simulación para reducir riesgos y mejorar decisiones.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" id="emailBtn" href="#" data-lang="en">Email me</a>
+          <a class="btn primary" id="emailBtnES" href="#" data-lang="es">Escríbeme</a>
+
+          <a class="btn" href="https://www.linkedin.com/in/dani-gil-gutierrez-6a17a727/" target="_blank" rel="noopener">
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="tagrow" aria-label="Key themes" data-lang="en">
+          <span class="tag">Project Management</span>
+          <span class="tag">Commissioning</span>
+          <span class="tag">Supplier coordination</span>
+          <span class="tag">Process modeling</span>
+          <span class="tag">Discrete-event simulation</span>
+        </div>
+
+        <div class="tagrow" aria-label="Temas clave" data-lang="es">
+          <span class="tag">Gestión de proyectos</span>
+          <span class="tag">Puesta en marcha</span>
+          <span class="tag">Coordinación proveedores</span>
+          <span class="tag">Modelado de procesos</span>
+          <span class="tag">Simulación eventos discretos</span>
+        </div>
+      </div>
+    </div>
+
+    <aside class="card">
+      <div class="pad">
+        <h2 data-lang="en">Quick snapshot</h2>
+        <h2 data-lang="es">Resumen rápido</h2>
+
+        <ul class="list" data-lang="en">
+          <li><span class="dot"></span><span><strong>Role:</strong> Industrial PM &amp; consultant</span></li>
+          <li><span class="dot"></span><span><strong>Focus:</strong> execution, risk reduction, and clean communication</span></li>
+          <li><span class="dot"></span><span><strong>Tools:</strong> planning, checklists, simulation for decision support</span></li>
+          <li><span class="dot"></span><span><strong>Location:</strong> Europe (remote / on-site as needed)</span></li>
+        </ul>
+
+        <ul class="list" data-lang="es">
+          <li><span class="dot"></span><span><strong>Rol:</strong> PM industrial &amp; consultor</span></li>
+          <li><span class="dot"></span><span><strong>Enfoque:</strong> ejecución, reducción de riesgos y comunicación clara</span></li>
+          <li><span class="dot"></span><span><strong>Herramientas:</strong> planificación, checklists, simulación para apoyar decisiones</span></li>
+          <li><span class="dot"></span><span><strong>Ubicación:</strong> Europa (remoto / on-site según necesidad)</span></li>
+        </ul>
+
+        <div style="margin-top:16px; padding-top:16px; border-top:1px solid var(--line);">
+          <h2 style="margin-bottom:8px;" data-lang="en">What you can expect</h2>
+          <h2 style="margin-bottom:8px;" data-lang="es">Qué puedes esperar</h2>
+
+          <ul class="list" data-lang="en">
+            <li><span class="dot"></span><span>Structured plans and realistic sequencing</span></li>
+            <li><span class="dot"></span><span>Clear interfaces with suppliers and stakeholders</span></li>
+            <li><span class="dot"></span><span>Simulation when it adds value (not as a buzzword)</span></li>
+          </ul>
+
+          <ul class="list" data-lang="es">
+            <li><span class="dot"></span><span>Planes estructurados y secuencias realistas</span></li>
+            <li><span class="dot"></span><span>Interfaz clara con proveedores y stakeholders</span></li>
+            <li><span class="dot"></span><span>Simulación cuando aporta valor (sin humo)</span></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <section id="about" class="grid" style="margin-top:18px;">
+    <div class="card">
+      <div class="pad">
+        <h2 data-lang="en">About</h2>
+        <h2 data-lang="es">Sobre mí</h2>
+
+        <p style="margin:0;color:var(--muted);" data-lang="en">
+          I work in industrial environments where planning, suppliers, installations and commissioning
+          must align. My approach is pragmatic: reduce ambiguity early, validate sequences, and keep the
+          project moving with consistent communication.
+        </p>
+        <p style="margin:0;color:var(--muted);" data-lang="es">
+          Trabajo en entornos industriales donde planificación, proveedores, instalación y puesta en marcha
+          deben alinearse. Mi enfoque es pragmático: reducir ambigüedad pronto, validar secuencias y mantener
+          el proyecto avanzando con una comunicación consistente.
+        </p>
+
+        <p style="margin:12px 0 0;color:var(--muted);" data-lang="en">
+          When useful, I use digital simulation (process modeling / discrete-event) to stress-test
+          scenarios, identify bottlenecks, and support decisions before issues appear on-site.
+        </p>
+        <p style="margin:12px 0 0;color:var(--muted);" data-lang="es">
+          Cuando aporta valor, uso simulación digital (modelado de procesos / eventos discretos) para
+          probar escenarios, detectar cuellos de botella y apoyar decisiones antes de que aparezcan problemas en planta.
+        </p>
+      </div>
+    </div>
+
+    <div class="card" id="services">
+      <div class="pad">
+        <h2 data-lang="en">What I do</h2>
+        <h2 data-lang="es">Qué hago</h2>
+
+        <ul class="list" data-lang="en">
+          <li><span class="dot"></span><span>Industrial project management (planning, execution, milestones)</span></li>
+          <li><span class="dot"></span><span>Supplier coordination &amp; technical follow-up</span></li>
+          <li><span class="dot"></span><span>Commissioning support (FAT/SAT structure, readiness checks)</span></li>
+          <li><span class="dot"></span><span>Process analysis and bottleneck identification</span></li>
+          <li><span class="dot"></span><span>Simulation-based analysis for decision making</span></li>
+        </ul>
+
+        <ul class="list" data-lang="es">
+          <li><span class="dot"></span><span>Gestión de proyectos industriales (planificación, ejecución, hitos)</span></li>
+          <li><span class="dot"></span><span>Coordinación de proveedores y seguimiento técnico</span></li>
+          <li><span class="dot"></span><span>Soporte a puesta en marcha (estructura FAT/SAT, readiness checks)</span></li>
+          <li><span class="dot"></span><span>Análisis de proceso e identificación de cuellos de botella</span></li>
+          <li><span class="dot"></span><span>Análisis con simulación para apoyar decisiones</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="card">
+      <div class="pad">
+        <h2 data-lang="en">Contact</h2>
+        <h2 data-lang="es">Contacto</h2>
+
+        <p style="margin:0;color:var(--muted);" data-lang="en">
+          The fastest way to reach me is by email. You can also connect via LinkedIn.
+        </p>
+        <p style="margin:0;color:var(--muted);" data-lang="es">
+          La forma más rápida de contactarme es por email. También puedes conectar conmigo en LinkedIn.
+        </p>
+
+        <div class="cta" style="margin-top:14px;">
+          <a class="btn primary" id="emailText" href="#" data-lang="en">Email</a>
+          <a class="btn primary" id="emailTextES" href="#" data-lang="es">Email</a>
+
+          <a class="btn" href="https://www.linkedin.com/in/dani-gil-gutierrez-6a17a727/" target="_blank" rel="noopener" data-lang="en">LinkedIn profile</a>
+          <a class="btn" href="https://www.linkedin.com/in/dani-gil-gutierrez-6a17a727/" target="_blank" rel="noopener" data-lang="es">Perfil de LinkedIn</a>
+        </div>
+
+        <p style="margin:14px 0 0;color:var(--muted); font-size:13px;" data-lang="en">
+          Available for short advisory engagements or project-based support.
+        </p>
+        <p style="margin:14px 0 0;color:var(--muted); font-size:13px;" data-lang="es">
+          Disponible para asesorías puntuales o soporte por proyecto.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div>© <span id="y"></span> Daniel Gil · gilgutierrez.me</div>
+    <div>
+      <a id="emailFooter" href="#">Email</a>
+      <span style="opacity:.5;">·</span>
+      <a href="https://www.linkedin.com/in/dani-gil-gutierrez-6a17a727/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Year
+  document.getElementById("y").textContent = new Date().getFullYear();
+
+  // Email (light obfuscation)
+  const u = "daniel";
+  const d = "gilgutierrez.me";
+  const email = `${u}@${d}`;
+  const subject = encodeURIComponent("Inquiry - gilgutierrez.me");
+  const mailto = `mailto:${email}?subject=${subject}`;
+
+  // Apply email links/text
+  const ids = ["emailBtn","emailBtnES","emailText","emailTextES","emailFooter"];
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.href = mailto;
+  });
+  // Show address in Contact buttons (EN/ES)
+  const emailText = document.getElementById("emailText");
+  const emailTextES = document.getElementById("emailTextES");
+  if (emailText) emailText.textContent = email;
+  if (emailTextES) emailTextES.textContent = email;
+
+  // Language switch (persist in localStorage + URL ?lang=es)
+  const btnEN = document.getElementById("btnEN");
+  const btnES = document.getElementById("btnES");
+
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    btnEN.setAttribute("aria-pressed", String(lang === "en"));
+    btnES.setAttribute("aria-pressed", String(lang === "es"));
+    try { localStorage.setItem("lang", lang); } catch(e) {}
+    // keep URL clean: add ?lang=es only if ES
+    const url = new URL(window.location.href);
+    if (lang === "es") url.searchParams.set("lang","es");
+    else url.searchParams.delete("lang");
+    window.history.replaceState({}, "", url.toString());
+  }
+
+  btnEN.addEventListener("click", () => setLang("en"));
+  btnES.addEventListener("click", () => setLang("es"));
+
+  // Initial language: URL param > saved > browser
+  const urlLang = new URL(window.location.href).searchParams.get("lang");
+  const saved = (() => { try { return localStorage.getItem("lang"); } catch(e){ return null; } })();
+  const browser = (navigator.language || "en").toLowerCase().startsWith("es") ? "es" : "en";
+  setLang(urlLang === "es" ? "es" : (saved === "es" || saved === "en") ? saved : browser);
+</script>
+</body>
+</html>
